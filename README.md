@@ -1,24 +1,72 @@
-# E-commerce Full Stack
 
-Proyecto de e-commerce desarrollado con **Node.js, Express y React + Vite**, con backend en Express y frontend en React. La aplicación permite la gestión de productos, carritos de compras y usuarios, con autenticación y roles diferenciados.
+# Ecommerce SaaS
 
-## Características
+> Plataforma de e-commerce full stack con gestión de productos, carritos, usuarios y tiendas. Backend en Node.js/Express, frontend en React + Vite, base de datos MongoDB Atlas.
 
-- ✅ Gestión completa de productos: alta, edición, eliminación y visualización con soporte para imágenes  
-- 🛒 Carritos de compras dinámicos, cálculo de totales y manejo de stock  
-- 🔐 Autenticación de usuarios y roles diferenciados (usuarios y administradores)  
-- 💼 Panel de administración avanzado  
-- 🔍 Filtros de búsqueda y ordenamiento de productos  
-- 📄 Persistencia de datos en **MongoDB Atlas**  
-- 🖥️ Frontend moderno con navegación fluida, formularios validados y diseño responsive  
+## Características principales
+- Gestión de productos, tiendas y usuarios (roles: usuario y administrador)
+- Carritos de compra multi-tienda, confirmación y contacto por WhatsApp
+- Panel de administración para tiendas
+- Filtros, búsqueda y ordenamiento de productos
+- Autenticación JWT y edición de perfil
+- Notificaciones y diseño responsive
 
-## Tecnologías
+## Instalación rápida
 
-- Backend: Node.js, Express  
-- Frontend: React + Vite  
-- Base de datos: MongoDB Atlas  
-- Deployment: Render
-- Otros: dotenv, cors  
+1. Clona el repositorio:
+	```bash
+	git clone https://github.com/JoaquinTonizzo/ecommerce-api-saas.git
+	cd ecommerce-api-saas
+	```
+2. Instala dependencias backend:
+	```bash
+	npm install
+	```
+3. Instala dependencias frontend:
+	```bash
+	cd client
+	npm install
+	```
+4. Configura variables de entorno en `.env` y `client/.env` (ver abajo)
+5. Ejecuta backend:
+	```bash
+	npm run dev
+	```
+6. Ejecuta frontend:
+	```bash
+	cd client
+	npm run dev
+	```
 
-## Despliegue
-- El proyecto está desplegado en Render: https://ecommerce-api-p95f.onrender.com
+## Estructura de carpetas
+
+```
+ecommerce-api-saas/
+├── src/           # Backend (Express)
+├── client/        # Frontend (React + Vite)
+├── public/        # Archivos estáticos
+├── .env           # Variables de entorno backend
+├── client/.env    # Variables de entorno frontend
+└── README.md
+```
+
+## Variables de entorno
+
+**Backend (.env):**
+```
+MONGO_URI
+JWT_SECRET
+PORT
+```
+
+**Frontend (client/.env):**
+```git push -u origin main
+VITE_API_URL
+```
+
+## Enlaces útiles
+- API Deploy: Pendiente
+
+## Créditos y licencia
+Desarrollado por Joaquin Tonizzo.
+git push -u origin main
