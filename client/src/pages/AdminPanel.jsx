@@ -264,49 +264,57 @@ export default function AdminPanel() {
                             <FaChevronDown className={`text-xl opacity-70 ml-2 transition-transform duration-200 ${productsOpen ? 'rotate-180' : ''}`} />
                         </summary>
                         <div className="flex flex-col gap-4 mt-4 p-4 bg-white/90 dark:bg-gray-800/90 rounded-xl shadow-lg border border-blue-100 dark:border-blue-900 backdrop-blur-md">
-                            <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                    <FaFilter className="text-blue-400 dark:text-blue-300 text-lg" />
-                                    <span className="flex items-center gap-1 font-semibold text-gray-700 dark:text-gray-200">
-                                    </span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 items-end w-full">
+                                {/* Filtro: Estado */}
+                                <div className="flex flex-col gap-1 w-full">
+                                    <label className="flex items-center gap-1 text-xs font-semibold text-blue-700 dark:text-blue-300 mb-1">
+                                        <FaFilter className="text-blue-400 text-[14px]" /> Estado
+                                    </label>
                                     <select
                                         value={showActivos ? 'activos' : 'inactivos'}
                                         onChange={e => setShowActivos(e.target.value === 'activos')}
-                                        className="px-3 py-2 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950 text-blue-800 dark:text-blue-100 text-sm font-medium"
+                                        className="w-full px-3 py-2 rounded-lg border border-blue-200 dark:border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:bg-blue-950 dark:text-white transition text-xs"
                                     >
                                         <option value="activos">Activos</option>
                                         <option value="inactivos">Inactivos</option>
                                     </select>
-                                    {showActivos ? <FaCheckCircle className="text-green-500 ml-1" /> : <FaBan className="text-pink-500 ml-1" />}
                                 </div>
-                                <div className="flex items-center gap-2 w-full sm:w-64">
-                                    <FaSearch className="text-purple-400 text-lg" />
+                                {/* Filtro: Buscar */}
+                                <div className="flex flex-col gap-1 w-full">
+                                    <label className="flex items-center gap-1 text-xs font-semibold text-purple-700 dark:text-purple-300 mb-1">
+                                        <FaSearch className="text-purple-400 text-[14px]" /> Buscar
+                                    </label>
                                     <input
                                         type="text"
                                         placeholder="Buscar por nombre..."
-                                        className="w-full px-3 py-2 rounded-lg border border-purple-200 dark:border-purple-800 bg-purple-50 dark:bg-purple-950 text-purple-800 dark:text-purple-100 text-sm font-medium"
+                                        className="w-full px-3 py-2 rounded-lg border border-purple-200 dark:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-300 dark:bg-purple-950 dark:text-white transition text-xs"
                                         value={search}
                                         onChange={e => setSearch(e.target.value)}
                                     />
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="font-semibold text-gray-700 dark:text-gray-200">Stock:</span>
+                                {/* Filtro: Stock */}
+                                <div className="flex flex-col gap-1 w-full">
+                                    <label className="flex items-center gap-1 text-xs font-semibold text-green-700 dark:text-green-300 mb-1">
+                                        <FaListAlt className="text-green-400 text-[14px]" /> Stock
+                                    </label>
                                     <select
                                         value={stockFilter}
                                         onChange={e => setStockFilter(e.target.value)}
-                                        className="px-3 py-2 rounded-lg border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950 text-green-800 dark:text-green-100 text-sm font-medium"
+                                        className="w-full px-3 py-2 rounded-lg border border-green-200 dark:border-green-700 focus:outline-none focus:ring-2 focus:ring-green-300 dark:bg-green-950 dark:text-white transition text-xs"
                                     >
                                         <option value="todos">Todos</option>
                                         <option value="conStock">Con stock</option>
                                         <option value="sinStock">Sin stock</option>
                                     </select>
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <FaListAlt className="text-pink-400 text-lg" />
-                                    <span className="font-semibold text-gray-700 dark:text-gray-200">Listado:</span>
+                                {/* Filtro: Listado */}
+                                <div className="flex flex-col gap-1 w-full">
+                                    <label className="flex items-center gap-1 text-xs font-semibold text-pink-700 dark:text-pink-300 mb-1">
+                                        <FaListAlt className="text-pink-400 text-[14px]" /> Listado
+                                    </label>
                                     <button
                                         onClick={() => setShowList(v => !v)}
-                                        className={`flex items-center gap-1 px-3 py-2 rounded-lg font-medium border border-pink-200 dark:border-pink-800 bg-pink-50 dark:bg-pink-950 text-pink-800 dark:text-pink-100 text-sm transition-all duration-150 ${showList ? 'opacity-100' : 'opacity-60'}`}
+                                        className={`w-full flex items-center justify-center gap-1 px-3 py-2 rounded-lg font-medium border border-pink-200 dark:border-pink-700 bg-pink-50 dark:bg-pink-950 text-pink-800 dark:text-pink-100 text-xs transition-all duration-150 ${showList ? 'opacity-100' : 'opacity-60'}`}
                                     >
                                         {showList ? <FaEyeSlash className="text-pink-500" /> : <FaEye className="text-green-500" />}
                                         {showList ? 'Ocultar' : 'Mostrar'}
